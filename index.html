@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adventistas Tatuapé — Links</title>
+<meta name="description" content="Assista ao vivo, contribua, faça seu pedido de oração e veja a agenda da Igreja Adventista do Tatuapé.">
+<meta name="theme-color" content="#020814">
+<link rel="canonical" href="https://link.adventistastatuape.org/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Adventistas Tatuapé">
+<meta property="og:description" content="Vivendo a esperança. Todos os links da igreja em um só lugar.">
+<meta property="og:url" content="https://link.adventistastatuape.org/">
+<meta property="og:image" content="https://adventistastatuape.org/assets/s4298/images/logo.webp">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#041E43;
+    --bg:#020814;
+    --card:rgba(10,26,52,.72);
+    --card-hover:rgba(14,38,76,.9);
+    --line:rgba(90,184,255,.14);
+    --line-strong:rgba(90,184,255,.38);
+    --neon:#5AB8FF;
+    --neon-soft:rgba(90,184,255,.12);
+    --red:#D90012;
+    --text:#F4F8FF;
+    --muted:#9FB3CF;
+    --dim:#6B819F;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* fundo: brilho azul no topo + textura de linhas verticais, como na inspiração */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(60% 45% at 50% -5%, rgba(40,110,210,.55), transparent 70%),
+      radial-gradient(40% 35% at 85% 25%, rgba(90,184,255,.10), transparent 70%),
+      radial-gradient(45% 40% at 10% 60%, rgba(4,30,67,.9), transparent 70%),
+      var(--bg);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:repeating-linear-gradient(90deg, rgba(90,184,255,.045) 0 1px, transparent 1px 4px);
+    -webkit-mask-image:linear-gradient(to bottom, #000 0%, rgba(0,0,0,.35) 55%, transparent 100%);
+            mask-image:linear-gradient(to bottom, #000 0%, rgba(0,0,0,.35) 55%, transparent 100%);
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:440px;margin:0 auto;padding:40px 18px calc(32px + env(safe-area-inset-bottom))}
+
+  /* ---------- topo ---------- */
+  header{text-align:center}
+  .wordmark{width:112px;margin:0 auto 12px;min-height:26px}
+  .wordmark img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 22px rgba(90,184,255,.45))}
+  .wordmark .fallback{display:block;text-align:center;font-weight:800;font-size:28px;line-height:1;letter-spacing:-.02em}
+  .avatar{
+    width:104px;height:104px;margin:0 auto 18px;border-radius:50%;overflow:hidden;
+    border:2px solid var(--neon);background:var(--navy);
+    box-shadow:0 0 0 6px rgba(90,184,255,.08), 0 0 38px rgba(90,184,255,.35);
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .oficial{font-size:11.5px;font-weight:600;color:var(--neon);letter-spacing:.01em;line-height:1.4}
+  .welcome{text-wrap:balance;hyphens:manual;margin-top:5px;font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
+  .verse{margin:12px auto 0;max-width:320px;font-size:13.5px;line-height:1.5;color:var(--muted);font-style:italic}
+  .verse cite{display:block;margin-top:3px;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .linha{margin-top:6px;color:var(--neon);font-weight:600;font-size:13.5px}
+  .bio{margin:14px auto 0;max-width:330px;color:var(--muted);font-size:14px;line-height:1.55}
+
+  /* ---------- rótulo de seção ---------- */
+  .label{
+    font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--neon);opacity:.85;
+    margin:34px 2px 12px;
+  }
+  .label.center{text-align:center}
+
+  /* ---------- destaques (todos visíveis, em grade) ---------- */
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .features.single{grid-template-columns:1fr}
+  .feature{
+    display:flex;flex-direction:column;overflow:hidden;border-radius:18px;
+    border:1px solid var(--line-strong);background:var(--card);
+    box-shadow:0 14px 40px rgba(0,0,0,.4);
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .feature:hover{transform:translateY(-2px);border-color:var(--neon)}
+  .feature .img{aspect-ratio:4/5;background:#0B1F3F center/cover no-repeat}
+  .features.single .feature .img{aspect-ratio:16/9}
+  .feature .body{padding:11px 12px 12px;flex:1;display:flex;flex-direction:column}
+  .feature .tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FF5A66}
+  .feature h2{font-size:14.5px;font-weight:800;line-height:1.25;margin-top:4px}
+  .feature .subt{display:block;font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3}
+  .feature .date{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.35}
+  .feature .go{
+    margin-top:auto;display:flex;align-items:center;justify-content:center;gap:5px;
+    background:var(--neon);color:var(--navy);font-weight:700;font-size:12.5px;
+    padding:8px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .feature .body .go{margin-top:12px}
+  .feature .spacer{flex:1}
+  .feature .go svg{width:13px;height:13px}
+
+  /* ---------- lista de links ---------- */
+  .links{display:flex;flex-direction:column;gap:10px}
+  .item{
+    display:flex;align-items:center;gap:14px;
+    padding:12px 14px;border-radius:var(--radius);
+    background:var(--card);border:1px solid var(--line);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+    opacity:0;transform:translateY(8px);animation:in .5s ease forwards;
+  }
+  .item:hover,.item:focus-visible{background:var(--card-hover);border-color:var(--line-strong)}
+  .item:active{transform:scale(.985)}
+  .ico{
+    flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+    background:var(--neon-soft);border:1px solid rgba(90,184,255,.22);color:var(--neon);
+  }
+  .ico svg{width:20px;height:20px}
+  .txt{flex:1;min-width:0}
+  .txt strong{display:block;font-size:15px;font-weight:700;line-height:1.25}
+  .txt span{display:block;font-size:12.5px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chev{flex:none;width:18px;height:18px;color:var(--dim);transition:transform .2s ease,color .2s ease}
+  .item:hover .chev{transform:translateX(3px);color:var(--neon)}
+  @keyframes in{to{opacity:1;transform:none}}
+
+  /* ---------- botões ---------- */
+  .cta{
+    margin-top:18px;display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;padding:15px 18px;border-radius:999px;
+    background:var(--neon);color:var(--navy);font-weight:700;font-size:15px;
+    box-shadow:0 8px 30px rgba(90,184,255,.35);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{transform:translateY(-1px);box-shadow:0 10px 38px rgba(90,184,255,.5)}
+  .cta svg{width:20px;height:20px}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .ghost{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:11px 10px;border-radius:999px;border:1px solid var(--line);
+    background:transparent;color:var(--muted);font:600 13px "Montserrat",sans-serif;cursor:pointer;
+    transition:border-color .2s ease,color .2s ease;
+  }
+  .ghost:hover{border-color:var(--line-strong);color:var(--text)}
+  .ghost svg{width:16px;height:16px}
+
+  /* ---------- horários ---------- */
+  .hours{border-radius:var(--radius);background:var(--card);border:1px solid var(--line);overflow:hidden}
+  .day{display:flex;align-items:flex-start;gap:14px;padding:14px 16px}
+  .day + .day{border-top:1px solid var(--line)}
+  .day .d{
+    flex:none;width:48px;padding-top:3px;
+    font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--neon);
+  }
+  .day ul{list-style:none;flex:1;display:flex;flex-direction:column;gap:6px}
+  .day li{display:flex;align-items:baseline;gap:10px}
+  .day .h{flex:none;min-width:52px;font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .day .n{font-size:14px;color:var(--muted)}
+
+  /* ---------- rodapé ---------- */
+  footer{margin-top:34px;text-align:center}
+  .social{display:flex;justify-content:center;gap:10px}
+  .social a{
+    width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    border:1px solid var(--line);color:var(--muted);transition:color .2s,border-color .2s;
+  }
+  .social a:hover{color:var(--neon);border-color:var(--line-strong)}
+  .social svg{width:19px;height:19px}
+  .site{
+    display:inline-block;margin-top:16px;
+    font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  }
+  .site:hover{color:var(--neon)}
+
+  .toast{
+    position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;
+    background:var(--navy);border:1px solid var(--line-strong);color:var(--text);
+    padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600;transition:.25s;pointer-events:none;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.item{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main class="wrap" id="app" aria-live="polite"></main>
+<div class="toast" id="toast">Link copiado!</div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  /* ícones (traço 1.8, estilo Lucide) */
+  var P = {
+    youtube:'<path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>',
+    instagram:'<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>',
+    facebook:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+    spotify:'<circle cx="12" cy="12" r="10"/><path d="M8 11.5c3-1 6.5-.7 9 .8M8.5 14.5c2.3-.7 4.8-.5 6.8.6M7.5 8.5c3.5-1.1 7.8-.8 10.5.9"/>',
+    tiktok:'<path d="M9 12a4 4 0 1 0 4 4V2a5 5 0 0 0 5 5"/>',
+    coracao:'<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/>',
+    oracao:'<path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/>',
+    calendario:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>',
+    celular:'<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>',
+    mapa:'<path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+    site:'<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>',
+    livro:'<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    play:'<circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/>',
+    pessoas:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+    presente:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+    whatsapp:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.5 9.2c0 2.8 2.5 5.3 5.3 5.3l.9-1.3-1.6-.9-.8.6a4 4 0 0 1-2.2-2.2l.6-.8-.9-1.6z" fill="currentColor" stroke="none"/>',
+    email:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+    link:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+    estrela:'<path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>',
+    musica:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+    carro:'<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>',
+    estacionamento:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>',
+    seta:'<path d="m9 18 6-6-6-6"/>',
+    setaDir:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+    relogio:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+    compartilhar:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/>'
+  };
+  function ic(n){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(P[n]||P.link)+'</svg>'}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function ext(u){return /^https?:/i.test(u)?' target="_blank" rel="noopener"':''}
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+
+  var C = window.LINKTREE || {}, g = C.igreja || {}, h = '';
+  var n = 0;
+
+  /* topo */
+  h += '<header>'
+     + '<div class="wordmark">'
+     + (g.logo ? '<img src="'+esc(g.logo)+'" alt="'+esc(g.nome)+'" onerror="this.outerHTML=\'<span class=fallback>adventistas<br>tatuapé</span>\'">' : '<span class="fallback">'+esc(g.nome)+'</span>')
+     + '</div>'
+     + (g.foto ? '<div class="avatar"><img src="'+esc(g.foto)+'" alt=""></div>' : '')
+     + '<h1 class="sr">'+esc(g.nome)+'</h1>'
+     + (g.titulo?'<p class="oficial">'+esc(g.titulo)+'</p>':'')
+     + (g.boasvindas?'<p class="welcome">'+esc(g.boasvindas)+'</p>':'')
+     + (g.versiculo && g.versiculo.texto?'<blockquote class="verse">“'+esc(g.versiculo.texto).replace(/\n/g,'<br>')+'”'+(g.versiculo.ref?'<cite>'+esc(g.versiculo.ref)+'</cite>':'')+'</blockquote>':'')
+     + '</header>';
+
+  /* destaques */
+  var D = (C.destaques || (C.destaque ? [C.destaque] : [])).filter(function(d){return d && d.ativo!==false});
+  if (D.length){
+    n++;
+    h += '<div class="label">0'+n+' — Em destaque</div><div class="features'+(D.length===1?' single':'')+'">';
+    D.forEach(function(d){
+      h += '<a class="feature" href="'+esc(d.url)+'"'+ext(d.url)+'>'
+         + '<div class="img" role="img" aria-label="'+esc(d.titulo)+'"'+(d.imagem?' style="background-image:url(\''+esc(d.imagem)+'\')"':'')+'></div>'
+         + '<div class="body">'
+         + (d.etiqueta?'<span class="tag">'+esc(d.etiqueta)+'</span>':'')
+         + '<h2>'+esc(d.titulo)+'</h2>'
+         + (d.subtitulo?'<span class="subt">'+esc(d.subtitulo)+'</span>':'')
+         + (d.data?'<span class="date">'+esc(d.data)+'</span>':'')
+         + '<span class="spacer"></span>'
+         + '<span class="go">'+esc(d.botao||'Saiba mais')+ic('setaDir')+'</span></div></a>';
+    });
+    h += '</div>';
+  }
+
+  /* links */
+  var L = (C.links||[]).filter(function(l){return l.ativo!==false});
+  if (L.length){
+    n++;
+    h += '<div class="label">0'+n+' — Acesse</div><nav class="links">';
+    L.forEach(function(l,i){
+      var u = (isIOS && l.url_ios) ? l.url_ios : l.url;
+      h += '<a class="item" style="animation-delay:'+(i*45)+'ms" href="'+esc(u)+'"'+ext(u)+'>'
+         + '<span class="ico">'+ic(l.icone)+'</span>'
+         + '<span class="txt"><strong>'+esc(l.titulo)+'</strong>'+(l.sub?'<span>'+esc(l.sub)+'</span>':'')+'</span>'
+         + '<span class="chev">'+ic('seta')+'</span></a>';
+    });
+    h += '</nav>';
+  }
+
+  /* whatsapp + secundários */
+  var w = C.whatsapp;
+  if (w){
+    var num = String(w.numero||'').replace(/\D/g,'');
+    var wu = num ? 'https://wa.me/'+num+(w.mensagem?'?text='+encodeURIComponent(w.mensagem):'') : (w.fallback||g.site);
+    h += '<a class="cta" href="'+esc(wu)+'" target="_blank" rel="noopener">'+ic('whatsapp')+esc(w.texto||'Fale conosco')+'</a>';
+  }
+  h += '<div class="duo">'
+     + '<button class="ghost" type="button" id="share">'+ic('compartilhar')+'Compartilhar</button>'
+     + '<a class="ghost" href="'+esc((g.site||'')+'/onde-nos-encontrar')+'" target="_blank" rel="noopener">'+ic('mapa')+'Como chegar</a>'
+     + '</div>';
+
+  /* horários */
+  var H = C.horarios;
+  if (H && H.ativo && (H.dias||[]).length){
+    n++;
+    h += '<div class="label">0'+n+' — Horários dos cultos</div><div class="hours">';
+    H.dias.forEach(function(x){
+      h += '<div class="day"><div class="d">'+esc(x.dia)+'</div><ul>';
+      (x.itens||[]).forEach(function(i){ h += '<li><span class="h">'+esc(i.hora)+'</span><span class="n">'+esc(i.nome)+'</span></li>'; });
+      h += '</ul></div>';
+    });
+    h += '</div>';
+  }
+
+  /* rodapé */
+  h += '<footer><div class="social">';
+  (C.redes||[]).forEach(function(r){
+    h += '<a href="'+esc(r.url)+'" target="_blank" rel="noopener" aria-label="'+esc(r.nome)+'">'+ic(r.icone)+'</a>';
+  });
+  h += '</div><a class="site" href="'+esc(g.site)+'" target="_blank" rel="noopener">'+esc((g.site||'').replace(/^https?:\/\//,''))+'</a></footer>';
+
+  document.getElementById('app').innerHTML = h;
+
+  /* compartilhar */
+  var t = document.getElementById('toast');
+  document.getElementById('share').addEventListener('click', function(){
+    var data = {title:g.nome, text:g.boasvindas||g.titulo, url:location.href};
+    if (navigator.share){ navigator.share(data).catch(function(){}); return; }
+    try{ navigator.clipboard.writeText(location.href).then(function(){ t.classList.add('show'); setTimeout(function(){t.classList.remove('show')},1800) }); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
