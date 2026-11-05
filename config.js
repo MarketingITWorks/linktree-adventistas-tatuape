@@ -40,9 +40,9 @@ window.LINKTREE = {
       ativo: true,
       etiqueta: "Quarta Kids",
       titulo: "Musical Minha Vida é Uma Viagem",
-      subtitulo: "com a Família Ludtke",
+      subtitulo: "com a Família Lüdtke",
       data: "2 de dezembro · 20h",
-      imagem: "https://storage.googleapis.com/media_files_prod/uploads/inchurch/1650775/app_image-428e21b785e208b1166500efd71cce48.jpg",
+      imagem: "img/quarta-kids-ludtke.jpg",
       botao: "Fazer inscrição",
       url: "https://adventistastatuape.org/eventos"
     }
